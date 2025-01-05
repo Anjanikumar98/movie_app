@@ -22,7 +22,9 @@ class DetailsScreen extends StatelessWidget {
             // Use the alias for Image widget to resolve ambiguity
             flutter_widgets.Image.network(movie.imageUrl ?? ''),
             const SizedBox(height: 10),
-            Text(movie.name, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            Text(movie.name,
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
             Text(movie.summary),
           ],

@@ -92,9 +92,11 @@ class HomeScreen extends StatelessWidget {
                     GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 10),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: (MediaQuery.of(context).size.width > 600) ? 3 : 2,
+                        crossAxisCount:
+                            (MediaQuery.of(context).size.width > 600) ? 3 : 2,
                         childAspectRatio: 0.7,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
@@ -121,41 +123,50 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(12),
-                                  child: movie.imageUrl != null && movie.imageUrl!.isNotEmpty
+                                  child: movie.imageUrl != null &&
+                                          movie.imageUrl!.isNotEmpty
                                       ? Image.network(
-                                    movie.imageUrl!,
-                                    fit: BoxFit.cover,
-                                    height: 150,
-                                    width: double.infinity,
-                                    loadingBuilder: (context, child, loadingProgress) {
-                                      if (loadingProgress == null) {
-                                        return child;
-                                      } else {
-                                        return Center(
-                                          child: CircularProgressIndicator(
-                                            value: loadingProgress.expectedTotalBytes != null
-                                                ? loadingProgress.cumulativeBytesLoaded /
-                                                (loadingProgress.expectedTotalBytes ?? 1)
-                                                : null,
-                                          ),
-                                        );
-                                      }
-                                    },
-                                    errorBuilder: (context, error, stackTrace) {
-                                      return Image.asset(
-                                        'assets/placeholder.webp',
-                                        fit: BoxFit.cover,
-                                        height: 150,
-                                        width: double.infinity,
-                                      );
-                                    },
-                                  )
+                                          movie.imageUrl!,
+                                          fit: BoxFit.cover,
+                                          height: 150,
+                                          width: double.infinity,
+                                          loadingBuilder: (context, child,
+                                              loadingProgress) {
+                                            if (loadingProgress == null) {
+                                              return child;
+                                            } else {
+                                              return Center(
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  value: loadingProgress
+                                                              .expectedTotalBytes !=
+                                                          null
+                                                      ? loadingProgress
+                                                              .cumulativeBytesLoaded /
+                                                          (loadingProgress
+                                                                  .expectedTotalBytes ??
+                                                              1)
+                                                      : null,
+                                                ),
+                                              );
+                                            }
+                                          },
+                                          errorBuilder:
+                                              (context, error, stackTrace) {
+                                            return Image.asset(
+                                              'assets/placeholder.webp',
+                                              fit: BoxFit.cover,
+                                              height: 150,
+                                              width: double.infinity,
+                                            );
+                                          },
+                                        )
                                       : Image.asset(
-                                    'assets/placeholder.webp',
-                                    fit: BoxFit.cover,
-                                    height: 150,
-                                    width: double.infinity,
-                                  ),
+                                          'assets/placeholder.webp',
+                                          fit: BoxFit.cover,
+                                          height: 150,
+                                          width: double.infinity,
+                                        ),
                                 ),
                                 const SizedBox(height: 8),
                                 Padding(
@@ -170,12 +181,14 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0),
                                   child: Text(
                                     movie.summary,
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(color: Colors.black.withOpacity(0.7)),
+                                    style: TextStyle(
+                                        color: Colors.black.withOpacity(0.7)),
                                   ),
                                 ),
                               ],

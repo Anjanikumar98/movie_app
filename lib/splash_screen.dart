@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) =>  HomeScreen()),
+        MaterialPageRoute(builder: (context) => HomeScreen()),
       );
     });
   }
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black,  // Background color similar to Netflix
+        backgroundColor: Colors.black, // Background color similar to Netflix
         body: Stack(
           fit: StackFit.expand,
           children: [
@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             // Gradient overlay to dim the image (like Netflix)
             Container(
-              color: Colors.black.withOpacity(0.6),  // Dim the background
+              color: Colors.black.withOpacity(0.6), // Dim the background
             ),
             // Centered text/logo with fade-in effect
             Center(
@@ -64,7 +64,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     const SizedBox(height: 20),
                     // A Netflix-style loading indicator (optional)
                     CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.red.shade500),
+                      valueColor:
+                          AlwaysStoppedAnimation<Color>(Colors.red.shade500),
                     ),
                   ],
                 ),

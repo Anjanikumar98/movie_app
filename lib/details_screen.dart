@@ -26,7 +26,7 @@ class DetailsScreen extends StatelessWidget {
                   if (loadingProgress == null) {
                     return child;
                   } else {
-                    return Center(child: CircularProgressIndicator());
+                    return  Center(child: CircularProgressIndicator());
                   }
                 },
                 fit: BoxFit.cover,
